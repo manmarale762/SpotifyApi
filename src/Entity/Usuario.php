@@ -19,7 +19,7 @@ class Usuario
      * @ORM\Column(name="id", type="integer", nullable=false, options={"unsigned"=true})
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
-     * @Groups({"usuario:read"})
+     * @Groups({"usuario:read","plan:read"})
      */
     private $id;
 
@@ -27,7 +27,7 @@ class Usuario
      * @var string
      *
      * @ORM\Column(name="username", type="string", length=45, nullable=false)
-     * @Groups({"usuario:read"})
+     * @Groups({"usuario:read","plan:read"})
      */
     private $username;
 
@@ -44,7 +44,7 @@ class Usuario
      * @var string
      *
      * @ORM\Column(name="email", type="string", length=150, nullable=false)
-     * @Groups({"usuario:read", "usuario:write"})
+     * @Groups({"usuario:read", "usuario:write","plan:read"})
      */
     private $email;
 

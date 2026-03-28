@@ -12,3 +12,28 @@ usuario:
   path: /usuarios/{id}
   controller: App\Controller\UserController::usuario
   methods: [GET,PUT,DELETE]
+
+consultarPlan:
+  path: /usuarios/{id}/plan
+  controller: App\Controller\UserController::consultarPlan
+  methods: [GET]
+
+activarPremium:
+  path: /usuarios/{id}/premium
+  controller: App\Controller\UserController::premium
+  methods: [POST]
+
+
+#PAGOS CONTROLLER
+
+suscripciones: #
+  path: /usuarios/{id}/suscripciones #SACAMOS TODOS LOS PAGOS DE EL USUARIO
+  controller: App\Controller\PagosController::suscripciones
+  methods: [GET]
+
+#AQUI SACAMOS TODA LA INFO DE UNA SUPSCRICPIONES(PAGO)
+supscripcion:
+  path: /suscripciones/{id}
+  controller: App\Controller\PagosController::suscripcion
+  methods: [ GET ]
+

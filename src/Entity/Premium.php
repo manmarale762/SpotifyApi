@@ -17,7 +17,7 @@ class Premium
      * @var \DateTime
      *
      * @ORM\Column(name="fecha_renovacion", type="date", nullable=false)
-     * @Groups({"usuario:read", "dashboard:read"})
+     * @Groups({"usuario:read", "plan:read"})
      */
     private $fechaRenovacion;
 
