@@ -19,7 +19,7 @@ class Usuario
      * @ORM\Column(name="id", type="integer", nullable=false, options={"unsigned"=true})
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
-     * @Groups({"usuario:read","dashboard:read","follow_playlist:read","playlistDetalles:read","artistaFollow:read","albumFollow:read"})
+     * @Groups({"usuario:read"})
      */
     private $id;
 
@@ -27,7 +27,7 @@ class Usuario
      * @var string
      *
      * @ORM\Column(name="username", type="string", length=45, nullable=false)
-     * @Groups({"usuario:read", "usuario:write","dashboard:read","follow_playlist:read","playlistDetalles:read","artistaFollow:read","albumFollow:read"})
+     * @Groups({"usuario:read"})
      */
     private $username;
 
@@ -44,7 +44,7 @@ class Usuario
      * @var string
      *
      * @ORM\Column(name="email", type="string", length=150, nullable=false)
-     * @Groups({"usuario:read", "usuario:write","dashboard:read"})
+     * @Groups({"usuario:read", "usuario:write"})
      */
     private $email;
 
@@ -52,7 +52,7 @@ class Usuario
      * @var string|null
      *
      * @ORM\Column(name="genero", type="string", length=1, nullable=true)
-     * @Groups({"usuario:read", "usuario:write","dashboard:read"})
+     * @Groups({"usuario:read", "usuario:write"})
      */
     private $genero;
 
@@ -60,7 +60,7 @@ class Usuario
      * @var \DateTime
      *
      * @ORM\Column(name="fecha_nacimiento", type="date", nullable=false)
-     * @Groups({"usuario:read", "usuario:write","dashboard:read"})
+     * @Groups({"usuario:read", "usuario:write"})
      */
     private $fechaNacimiento;
 
@@ -68,7 +68,7 @@ class Usuario
      * @var string|null
      *
      * @ORM\Column(name="pais", type="string", length=45, nullable=true)
-     * @Groups({"usuario:read", "usuario:write","dashboard:read"})
+     * @Groups({"usuario:read", "usuario:write"})
      */
     private $pais;
 
@@ -76,7 +76,7 @@ class Usuario
      * @var string|null
      *
      * @ORM\Column(name="codigo_postal", type="string", length=20, nullable=true)
-     * @Groups({"usuario:read", "usuario:write","dashboard:read"})
+     * @Groups({"usuario:read", "usuario:write"})
      */
     private $codigoPostal;
 
@@ -97,7 +97,7 @@ class Usuario
 
     /**
      * @var \Doctrine\Common\Collections\Collection
-     * @Groups("dashboard:read")
+     *
      * @ORM\ManyToMany(targetEntity="Podcast", inversedBy="usuario")
      * @ORM\JoinTable(name="podcast_usuario",
      *   joinColumns={
@@ -112,7 +112,7 @@ class Usuario
 
     /**
      * @var \Doctrine\Common\Collections\Collection
-     *@Groups("dashboard:read","albumFollow:read")
+     *@Groups("albumFollow:read")
      * @ORM\ManyToMany(targetEntity="Album", inversedBy="usuario")
      * @ORM\JoinTable(name="sigue_album",
      *   joinColumns={
@@ -127,7 +127,7 @@ class Usuario
 
     /**
      * @var \Doctrine\Common\Collections\Collection
-     *@Groups("dashboard:read", "artistaFollow:read")
+     *@Groups("artistaFollow:read")
      * @ORM\ManyToMany(targetEntity="Artista", inversedBy="usuario")
      * @ORM\JoinTable(name="sigue_artista",
      *   joinColumns={
@@ -142,7 +142,7 @@ class Usuario
 
     /**
      * @var \Doctrine\Common\Collections\Collection
-     *@Groups("dashboard:read","playlistDetalles:read")
+     *@Groups("playlistDetalles:read")
      * @ORM\ManyToMany(targetEntity="Playlist", inversedBy="usuarioSeguidor")
      * @ORM\JoinTable(name="sigue_playlist",
      *   joinColumns={

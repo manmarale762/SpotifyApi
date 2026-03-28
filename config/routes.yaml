@@ -5,10 +5,10 @@
 #USUARIO CONTROLLER
 usuarios:
   path: /usuarios
-  controller: App\Controller\UsuarioController::usuarios
+  controller: App\Controller\UserController::usuarios
   methods: [GET,POST]
 
 usuario:
   path: /usuarios/{id}
-  controller: App\Controller\UsuarioController::usuario
+  controller: App\Controller\UserController::usuario
   methods: [GET,PUT,DELETE]
