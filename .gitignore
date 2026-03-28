@@ -1,0 +1,23 @@
+# Entorno y Secretos
+.env
+.env.webaap
+.env.local
+.env.local.php
+.env.*.local
+
+# Dependencias y Caché de Symfony
+/vendor/
+/var/
+/public/bundles/
+
+# Base de datos y volcados
+spotify.sql
+.php_cs.cache
+.phpunit.result.cache
+
+# Configuración del IDE (PhpStorm / WebStorm)
+.idea/
+
+# Otros
+.symfony.lock
+docker-compose.yml

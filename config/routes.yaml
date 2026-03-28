@@ -1,0 +1,14 @@
+#index:
+#    path: /
+#    controller: App\Controller\DefaultController::index
+
+#USUARIO CONTROLLER
+usuarios:
+  path: /usuarios
+  controller: App\Controller\UsuarioController::usuarios
+  methods: [GET,POST]
+
+usuario:
+  path: /usuarios/{id}
+  controller: App\Controller\UsuarioController::usuario
+  methods: [GET,PUT,DELETE]
