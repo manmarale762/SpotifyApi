@@ -287,6 +287,4 @@ class UserController extends AbstractController
 
         return new Response("Not allowed", 405);
     }
-
-
 }

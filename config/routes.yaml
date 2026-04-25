@@ -37,3 +37,29 @@ supscripcion:
   controller: App\Controller\PagosController::suscripcion
   methods: [ GET ]
 
+#CONFIG CONTROLLER
+
+
+configuracion:
+  path: /usuarios/{id}/configuracion
+  controller: App\Controller\ConfiguracionController::configuracionUser
+  methods: [GET]
+
+
+cambiarconfiguracion:
+  path: /usuarios/{id}/configuracion
+  controller: App\Controller\ConfiguracionController::cambiarConfiguracion
+  methods: [PUT]
+
+
+#PLAYLIST CONTROLLER
+
+playlistUser:
+  path: /usuarios/{id}/playlists
+  controller: App\Controller\PlaylistController::playlists
+  methods: [GET,POST]
+
+playlistDetalles:
+  path: /playlists/{id}
+  controller: App\Controller\PlaylistController::playlistDetail
+  methods: [GET]
