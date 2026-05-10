@@ -19,12 +19,13 @@ use Symfony\Component\Serializer\SerializerInterface;
 class ConfiguracionController extends AbstractController
 {
 
-    public function configuracionUser(Request $request, SerializerInterface $serializer): Response
+    public function
+    configuracionUser(Request $request, SerializerInterface $serializer): Response
     {
-        if ($request->isMethod('POST')) {
+        if ($request->isMethod('GET')) {
             $id = $request->get('id');
 
-            $config = $this->getDoctrine()->getRepository(Configuracion::class)->findOneBy(['id' => $id]);
+            $config = $this->getDoctrine()->getRepository(Configuracion::class)->findOneBy(['usuario' => $id]);
 
             if (!$config) {
                 return new Response(json_encode(['error' => 'Usuario no tiene configuracion']), 404);
@@ -89,7 +90,7 @@ class ConfiguracionController extends AbstractController
                 if($config->getTipoDescarga()){
                     $descarga = $this->getDoctrine()->getRepository(TipoDescarga::class)->find($config->getTipoDescarga()->getId());
                     if (!$descarga) throw new \Exception("El tipo de descarga no es válido");
-                    $config->setIdioma($descarga);
+                    $config->setTipoDescarga($descarga);
                 }
 
                 #Guardamos tutto

@@ -212,7 +212,7 @@ class UserController extends AbstractController
                 return new Response(json_encode(['error' => 'Usuario no encontrado']), 404);
             }
 
-            $plan = $this->getDoctrine()->getRepository(Premium::class)->findOneBy(['user'=>$user]);
+            $plan = $this->getDoctrine()->getRepository(Premium::class)->findOneBy(['usuario'=>$user]);
             $tipoPlan = 'premium';
 
             if(!$plan){
@@ -249,7 +249,7 @@ class UserController extends AbstractController
                 return new Response(json_encode(['error' => 'Usuario no encontrado']), 404);
             }
 
-            $YaesPremium = $this->getDoctrine()->getRepository(Premium::class)->findOneBy(['user'=>$user]);
+            $YaesPremium = $this->getDoctrine()->getRepository(Premium::class)->findOneBy(['usuario'=>$user]);
 
             if ($YaesPremium) {
                 return new Response(json_encode(['error' => 'El usuario ya es premium']), 409);

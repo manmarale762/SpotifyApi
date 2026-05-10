@@ -53,7 +53,7 @@ class Playlist
      * @ORM\JoinColumns({
      *   @ORM\JoinColumn(name="usuario_id", referencedColumnName="id")
      * })
-     * @Groups({"follow_playlist:read","playlistDetalles:read"})
+     * @Groups({"follow_playlist:read","playlistDetalles:read" })
      */
     private $usuario;
 

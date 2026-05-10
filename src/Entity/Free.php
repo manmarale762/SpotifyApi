@@ -17,7 +17,7 @@ class Free
      * @var \DateTime
      *
      * @ORM\Column(name="fecha_revision", type="date", nullable=false)
-     * @Groups({"usuario:read", "dashboard:read"})
+     * @Groups({"usuario:read", "dashboard:read","plan:read"})
      */
     private $fechaRevision;
 
@@ -25,7 +25,7 @@ class Free
      * @var int
      *
      * @ORM\Column(name="tiempo_publicidad", type="integer", nullable=false, options={"default"="600"})
-     * @Groups({"usuario:read", })
+     * @Groups({"usuario:read","plan:read" })
      */
     private $tiempoPublicidad = 600;
 

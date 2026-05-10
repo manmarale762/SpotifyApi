@@ -13,6 +13,8 @@ usuario:
   controller: App\Controller\UserController::usuario
   methods: [GET,PUT,DELETE]
 
+
+#CARPETA PLANES EN POSTMAN
 consultarPlan:
   path: /usuarios/{id}/plan
   controller: App\Controller\UserController::consultarPlan
@@ -63,3 +65,16 @@ playlistDetalles:
   path: /playlists/{id}
   controller: App\Controller\PlaylistController::playlistDetail
   methods: [GET]
+
+#Canciones de una playlist
+cancionesPlaylist:
+  path: /playlists/{id}/canciones
+  controller: App\Controller\PlaylistController::cancionesPlaylist
+  methods: [GET,POST,DELETE]
+
+
+#SEGUIR CON EL FOLLOW CONTROLLER
+
+
+
+

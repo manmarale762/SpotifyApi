@@ -19,7 +19,7 @@ class Usuario
      * @ORM\Column(name="id", type="integer", nullable=false, options={"unsigned"=true})
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
-     * @Groups({"usuario:read","plan:read"})
+     * @Groups({"usuario:read","plan:read","playlistDetalles:read"})
      */
     private $id;
 
@@ -27,7 +27,7 @@ class Usuario
      * @var string
      *
      * @ORM\Column(name="username", type="string", length=45, nullable=false)
-     * @Groups({"usuario:read","plan:read"})
+     * @Groups({"usuario:read","plan:read","playlistDetalles:read"})
      */
     private $username;
 
@@ -142,7 +142,6 @@ class Usuario
 
     /**
      * @var \Doctrine\Common\Collections\Collection
-     *@Groups("playlistDetalles:read")
      * @ORM\ManyToMany(targetEntity="Playlist", inversedBy="usuarioSeguidor")
      * @ORM\JoinTable(name="sigue_playlist",
      *   joinColumns={
